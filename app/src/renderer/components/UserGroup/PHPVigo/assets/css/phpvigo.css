@@ -1,0 +1,70 @@
+#phpvigo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 25px;
+  background: #0368FF url(../i/dot.png) 10px 10px;
+  font-family: Dosis;
+  color: #fff;
+}
+#phpvigo > header,
+#phpvigo > footer {
+  background: #fff;
+  padding: 10px 40px;
+  color: #0368FF;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+#phpvigo > header h1,
+#phpvigo > footer h1 {
+  margin: 0;
+  font-family: Dosis;
+}
+#phpvigo > header #logo,
+#phpvigo > footer #logo {
+  max-height: 40px;
+  float: right;
+}
+#phpvigo > footer {
+  bottom: 0;
+}
+#phpvigo > header {
+  top: 0;
+}
+#phpvigo > aside {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  padding: 15px;
+  font-size: 20px;
+  width: 20%;
+}
+#phpvigo #countdown-wrapper {
+  text-align: right;
+  display: none;
+}
+#phpvigo #countdown-wrapper #countdown {
+  text-align: center;
+  font-size: 30px;
+  background: #fff;
+  padding: 0 10px;
+  color: #000;
+  margin-bottom: 10px;
+}
+#phpvigo #countdown-wrapper .logo {
+  margin-bottom: 10px;
+}
+#phpvigo #clock {
+  margin-bottom: 30px;
+  text-align: center;
+}
+#phpvigo #clock .date {
+  font-size: 15px;
+  line-height: 25px;
+}
+#phpvigo #clock .time {
+  font-size: 30px;
+}

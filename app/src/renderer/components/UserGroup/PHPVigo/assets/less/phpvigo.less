@@ -1,0 +1,89 @@
+@primary-color:  #0368FF;
+@white-color: #fff;
+@black-color: #000;
+
+@primary-font: Dosis;
+
+
+#phpvigo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 25px;
+
+
+  background: @primary-color url(../i/dot.png) 10px 10px;
+  font-family: @primary-font;
+  color: @white-color;
+
+  > header,
+  > footer {
+    background: @white-color;
+    padding: 10px 40px;
+    color: @primary-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    h1 {
+      margin: 0;
+      font-family: @primary-font;
+    }
+
+    #logo {
+      max-height: 40px;
+      float: right;
+    }
+  }
+  > footer {
+    bottom: 0;
+  }
+
+  > header {
+    top: 0;
+  }
+
+  > aside {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    padding: 15px;
+    font-size: 20px;
+    width: 20%;
+
+  }
+
+  #countdown-wrapper {
+    text-align: right;
+    display: none;
+    #countdown {
+      text-align: center;
+      font-size: 30px;
+      background: @white-color;
+      padding: 0 10px;
+      color: @black-color;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      margin-bottom: 10px;
+    }
+  }
+
+  #clock {
+    margin-bottom: 30px;
+    text-align: center;
+    .date {
+      font-size: 15px;
+      line-height: 25px;
+    }
+    .time {
+      font-size: 30px;
+    }
+  }
+
+}
+
+
