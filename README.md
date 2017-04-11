@@ -27,7 +27,15 @@ It's easy, simpy create a new vue component in renderer/UserGroup/[yourUG]/yourU
 
 Make sure you import Usergrpup.js into your component and use as mixin.
 
+## Example images
 
+![OBS01](http://www.sergiocarracedo.es/uploads/obsbackground01.png)
+
+![OBS02](http://www.sergiocarracedo.es/uploads/obsbackground02.png)
+
+![OBS03](http://www.sergiocarracedo.es/uploads/obsbackground03.png)
+
+----
 
 More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/docs/npm_scripts.html).
 
