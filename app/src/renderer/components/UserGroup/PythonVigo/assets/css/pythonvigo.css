@@ -1,36 +1,36 @@
-#phpvigo {
+#pythonvigo {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   font-size: 25px;
-  background: #0368FF url(../i/dot.png) 10px 10px;
-  font-family: Dosis;
+  background: #80B2DE;
+  font-family: Arial, Helvetica, 'Open Sans';
   color: #fff;
 }
-#phpvigo > header,
-#phpvigo > footer {
+#pythonvigo > header,
+#pythonvigo > footer {
   background: #fff;
   padding: 20px 40px;
-  color: #0368FF;
+  color: #000;
   position: absolute;
   left: 0;
   right: 0;
   font-size: 28px;
 }
-#phpvigo > header h1,
-#phpvigo > footer h1 {
+#pythonvigo > header h1,
+#pythonvigo > footer h1 {
   margin: 0;
-  font-family: Dosis;
+  font-family: Arial, Helvetica, 'Open Sans';
 }
-#phpvigo > footer {
+#pythonvigo > footer {
   bottom: 0;
 }
-#phpvigo > header {
+#pythonvigo > header {
   top: 0;
 }
-#phpvigo > header #logo {
+#pythonvigo > header #logo {
   position: absolute;
   background: url(../i/logo.png) no-repeat right center;
   background-size: contain;
@@ -39,7 +39,7 @@
   width: 200px;
   height: 40px;
 }
-#phpvigo > aside {
+#pythonvigo > aside {
   position: absolute;
   right: 0;
   top: 60px;
@@ -47,9 +47,6 @@
   font-size: 20px;
   width: 20%;
 }
-#phpvigo > aside #lightning .lightning-logo {
-  height: 100px;
-  margin-bottom: 30px;
-  background: url(../i/logo-lightnings.png) no-repeat center center;
-  background-size: contain;
+#pythonvigo > aside #lightning .lightning-logo {
+  display: none;
 }

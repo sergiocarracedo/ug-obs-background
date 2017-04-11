@@ -1,8 +1,7 @@
 <template>
     <div id="lightning">
         <div class="lightning-logo"></div>
-        CHARLA LIGHTING
-        <obs-timer :time="5*60"></obs-timer>
+        <obs-timer :time="300"></obs-timer>
     </div>
 </template>
 

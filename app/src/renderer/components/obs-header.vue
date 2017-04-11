@@ -2,9 +2,7 @@
     <header>
         {{ title }}
 
-        <div id="logo" v-if="logo">
-            <img :src="logo" class="img-responsive" />
-        </div>
+        <div id="logo" v-if="logo"></div>
     </header>
 </template>
 

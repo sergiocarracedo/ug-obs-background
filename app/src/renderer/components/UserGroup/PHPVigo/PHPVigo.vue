@@ -2,7 +2,7 @@
     <div id="phpvigo">
         <obs-header
                 :title="meetup.title"
-                logo=""
+                :logo="true"
         ></obs-header>
 
         <obs-aside :isLightning="currentTalk.isLightning"></obs-aside>
@@ -21,4 +21,4 @@
 </script>
 
 <style src="./assets/fonts/dosis.css" scoped></style>
-<style src="./assets/css/phpvigo.css" scoped></style>
+<style src="./assets/css/phpvigo.css"></style>
