@@ -5,7 +5,9 @@
                 logo=""
         ></obs-header>
 
-        <obs-footer :speaker="speaker" :title="talk"></obs-footer>
+        <obs-aside :isLightning="currentTalk.isLightning"></obs-aside>
+
+        <obs-footer :speaker="currentTalk.speaker" :title="currentTalk.title"></obs-footer>
     </div>
 </template>
 

@@ -7,7 +7,6 @@ const state = {
     meetup: {
         title: settings.get('meetup', '#PHPVigo #0'),
     },
-    talks: {},
     dialog: false
 }
 
@@ -15,9 +14,9 @@ const mutations = {
     [types.SET_UG] (state, ug) {
         state.ug = ug;
     },
-    [types.SET_TALK] (state, talk) {
-        state.talk = talk;
-    },
+    // [types.SET_TALK] (state, index, rootState) {
+    //     state.talk = rootState.talks.talks[index];
+    // },
     [types.SET_MEETUP] (state, meetup) {
         state.meetup = meetup;
     },
@@ -31,9 +30,11 @@ const mutations = {
 }
 
 const actions = {
-    [types.SAVE_SETTINGS] (context) {
+    [types.ACTION_SAVE_SETTINGS] (context) {
         settings.set('ug', context.state.ug);
         settings.set('meetup', context.state.meetup.title);
+        settings.set('talks', context.rootState.talks.talks);
+        settings.set('currentTalkIndex', context.rootState.talks.currentTalkIndex);
     }
 }
 

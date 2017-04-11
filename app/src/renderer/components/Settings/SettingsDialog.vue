@@ -1,41 +1,68 @@
 <template>
     <md-dialog ref="settingsDialog" @close="onClose" width="90%">
-        <md-dialog-title>Configuración</md-dialog-title>
-
         <md-dialog-content>
+            <md-tabs>
+                <md-tab id="talks" md-label="Charlas">
+                    <md-button class="md-primary md-raised md-dense" @click.native="addTalk()">
+                        <i class="fa fa-plus"></i>
+                    </md-button>
+                    <div class="talks-list">
+                        <md-layout v-for="(talk, index) in talks">
+                            <md-layout md-flex="5">
+                                <md-radio v-model="currentTalk" name="currentTalk" :md-value="index" @change="setCurrentTalk"></md-radio>
+                            </md-layout>
+                            <md-layout md-flex="30">
+                                <md-input-container>
+                                    <label>Título charla</label>
+                                    <md-input v-model="talk.title" @change="updateTalk(talk)"></md-input>
+                                </md-input-container>
+                            </md-layout>
+                            <md-layout md-flex="30">
+                                <md-input-container>
+                                    <label>Ponente</label>
+                                    <md-input v-model="talk.speaker" @change="updateTalk(talk)"></md-input>
+                                </md-input-container>
+                            </md-layout>
+                            <md-layout md-flex="25">
+                                <md-switch v-model="talk.isLightning" @change="updateTalk(talk)">Lightning</md-switch>
+                            </md-layout>
 
-            <md-input-container>
-                <label for="selectedUg">Grupo</label>
-                <md-select name="selectedUg" id="selectedUg" v-model="settings.ug">
-                    <md-option v-for="ug in ugList" :value="ug">{{ ug }}</md-option>
-                </md-select>
-            </md-input-container>
+                            <md-layout md-flex="10">
+                                <md-button class="md-icon-button md-raised md-dense md-accent" @click.native="removeTalk(talk)">
+                                    <i class="fa fa-trash"></i>
+                                </md-button>
+                            </md-layout>
+                        </md-layout>
+                    </div>
+                </md-tab>
 
-            <md-input-container>
-                <label>Título meetup</label>
-                <md-input v-model="settings.meetup.title"></md-input>
-            </md-input-container>
+                <md-tab id="config" md-label="Configuración">
+                    <md-input-container>
+                        <label for="selectedUg">Grupo</label>
+                        <md-select name="selectedUg" id="selectedUg" v-model="settings.ug">
+                            <md-option v-for="ug in ugList" :value="ug">{{ ug }}</md-option>
+                        </md-select>
+                    </md-input-container>
 
-            <hr/>
+                    <md-input-container>
+                        <label>Título meetup</label>
+                        <md-input v-model="settings.meetup.title"></md-input>
+                    </md-input-container>
+                </md-tab>
 
+            </md-tabs>
 
-            <h3>Charlas</h3>
-
-            <md-button class="md-fab md-fab-top-right md-dense" @click.native="addTalk()">
-                <i class="fa fa-plus"></i>
-            </md-button>
-            <settings-talk v-for="talk in settings.talks"></settings-talk>
         </md-dialog-content>
 
         <md-dialog-actions>
-            <md-button class="md-primary" @click.native="close()">Cancelar</md-button>
-            <md-button class="md-primary md-raised" @click.native="save()">Guardar</md-button>
+            <md-button class="md-primary md-raised" @click.native="close()">Cerrar</md-button>
         </md-dialog-actions>
     </md-dialog>
 </template>
 
 <script>
     import * as types from '../../vuex/mutation-types'
+    import { mapState } from 'vuex'
     export default {
         name: 'settings-dialog',
         props: ['ugList'],
@@ -44,13 +71,25 @@
                 settings: {
                     ug: null,
                     meetup: {},
-                    talks: []
-                }
+                },
+
             }
         },
         computed: {
             dialogVisibility() {
                 return this.$store.state.settings.dialog;
+            },
+            currentTalk() {
+                return this.$store.state.talks.currentTalkIndex;
+            },
+            talks: {
+                get: function () {
+                    return this.$store.state.talks.talks;
+                },
+                set: function (newValue) {
+
+
+                }
             }
         },
         watch: {
@@ -80,23 +119,32 @@
                 this.$refs['settingsDialog'].close();
             },
             onClose() {
+                this.save();
                 this.$store.commit(types.CLOSE_SETTINGS_DIALOG)
+
             },
             save()
             {
                 this.$store.commit(types.SET_UG, this.settings.ug);
                 this.$store.commit(types.SET_MEETUP, this.settings.meetup);
-                this.$store.dispatch(types.SAVE_SETTINGS);
-
-
-                this.close();
+                this.$store.dispatch(types.ACTION_SAVE_SETTINGS);
             },
             addTalk() {
-                this.settings.talks.push({
+                this.$store.commit(types.ADD_TALK, {
                     title: null,
                     speaker: null,
                     isLightning: false,
                 })
+            },
+            removeTalk(talk) {
+                this.$store.commit(types.REMOVE_TALK, talk)
+            },
+            updateTalk(talk) {
+                console.log(talk);
+                this.$store.commit(types.UPDATE_TALK, talk)
+            },
+            setCurrentTalk(index) {
+                this.$store.dispatch(types.ACTION_SET_CURRENT_TALK, index);
             }
 
         }

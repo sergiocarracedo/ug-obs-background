@@ -20,9 +20,11 @@ for (var ugComponent in ugComponents) {
 }
 
 Vue.component('settings-dialog', require('./components/Settings/SettingsDialog.vue'));
-Vue.component('settings-talk', require('./components/Settings/SettingsTalk.vue'));
 Vue.component('obs-header', require('./components/obs-header.vue'));
 Vue.component('obs-footer', require('./components/obs-footer.vue'));
+Vue.component('obs-aside', require('./components/obs-aside.vue'));
+Vue.component('obs-lightning', require('./components/obs-lightning.vue'));
+Vue.component('obs-timer', require('./components/obs-timer.vue'));
 
 
 import App from './App'

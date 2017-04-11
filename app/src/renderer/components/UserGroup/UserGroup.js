@@ -7,14 +7,15 @@ export default {
         },
     },
     computed: {
-        speaker() {
-            return this.$store.state.settings.speaker;
-        },
-        talk() {
-            return this.$store.state.settings.talk;
-        },
         meetup() {
             return this.$store.state.settings.meetup;
+        },
+        currentTalk() {
+            return this.$store.state.talks.currentTalk;
         }
+
+    },
+    mounted() {
+        this.$store.dispatch(types.ACTION_SET_CURRENT_TALK);
     }
 };
