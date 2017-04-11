@@ -1,9 +1,9 @@
 # ug-obs-background
 
 > User Group OBS Background is an electron.js app using vue.js and vuex.
-> Main goal is get a interactive background for OBS and use it in User Group Meetups
-> You can set a list of talks, and quick change between them.
-> Also you can set talk as lightning talk and magically a countdown appears
+> The main goal is to get a interactive background for OBS and use it in User Group Meetups
+> You can set a list of talks and quickly move among them.
+> You can also set a talk as lightning talk and countdown appears magically.
  
 
 ## Build Setup
