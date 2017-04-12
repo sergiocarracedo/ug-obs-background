@@ -14,7 +14,8 @@ function createWindows() {
      */
     mainWindow = new BrowserWindow({
         height: 600,
-        width: 800
+        width: 800,
+        icon: 'file://' + __dirname + '/../../icons/256x256.png',
     })
 
     mainWindow.loadURL(mainWinURL)
@@ -33,9 +34,7 @@ app.on('ready', () => {
 })
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit()
-    }
+   app.quit()
 })
 
 app.on('activate', () => {
