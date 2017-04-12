@@ -1,0 +1,99 @@
+/**
+ *
+ * This file is part of ug-obs-background project
+ * ug-obs-background is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option)
+ * any later version.
+ * ug-obs-background is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with ug-obs-background. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author      Sergio Carracedo Martinez <info@sergiocarracedo.es>
+ * @copyright   2017 Sergio Carracedo Martinez
+ * @license     http://www.gnu.org/licenses/lgpl-3.0.txt GNU LGPL 3.0
+ *
+ */
+
+
+@primary-color:  #87B0DC;
+@white-color: #fff;
+@black-color: #000;
+
+@primary-font: 'Open Sans', Arial, Helvetica;
+
+#jsvigo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 25px;
+
+  background: #eeeeee url(../i/bg.svg) no-repeat bottom ;
+  font-family: @primary-font;
+  color: @white-color;
+
+  > header,
+  > footer {
+    background: @primary-color;
+    padding: 20px 40px;
+    color: @white-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 28px;
+
+    h1 {
+      margin: 0;
+      font-family: @primary-font;
+    }
+
+
+  }
+  > footer {
+    bottom: 0;
+  }
+
+  > header {
+    top: 0;
+
+    #logo {
+      position: absolute;
+      background: url(../i/jsvigo.jpg) no-repeat center center;
+      background-size: contain;
+      right:0;
+      top:10px;
+      width: 20%;
+      height: 100px;
+    }
+  }
+
+  > aside {
+    position: absolute;
+    right: 0;
+    top: 130px;
+    padding: 15px;
+    font-size: 20px;
+    width: 20%;
+
+
+    #lightning {
+      background: @primary-color;
+      padding: 15px;
+      .lightning-logo {
+        display: none
+      }
+    }
+
+    #timer .countdown {
+      color: #fff;
+    }
+  }
+}
+
+

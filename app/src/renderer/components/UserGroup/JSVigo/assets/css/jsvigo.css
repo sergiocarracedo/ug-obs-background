@@ -1,0 +1,79 @@
+/**
+ *
+ * This file is part of ug-obs-background project
+ * ug-obs-background is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option)
+ * any later version.
+ * ug-obs-background is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with ug-obs-background. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author      Sergio Carracedo Martinez <info@sergiocarracedo.es>
+ * @copyright   2017 Sergio Carracedo Martinez
+ * @license     http://www.gnu.org/licenses/lgpl-3.0.txt GNU LGPL 3.0
+ *
+ */
+#jsvigo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 25px;
+  background: #eeeeee url(../i/bg.svg) no-repeat bottom;
+  font-family: 'Open Sans', Arial, Helvetica;
+  color: #fff;
+}
+#jsvigo > header,
+#jsvigo > footer {
+  background: #87B0DC;
+  padding: 20px 40px;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 28px;
+}
+#jsvigo > header h1,
+#jsvigo > footer h1 {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica;
+}
+#jsvigo > footer {
+  bottom: 0;
+}
+#jsvigo > header {
+  top: 0;
+}
+#jsvigo > header #logo {
+  position: absolute;
+  background: url(../i/jsvigo.jpg) no-repeat center center;
+  background-size: contain;
+  right: 0;
+  top: 10px;
+  width: 20%;
+  height: 100px;
+}
+#jsvigo > aside {
+  position: absolute;
+  right: 0;
+  top: 130px;
+  padding: 15px;
+  font-size: 20px;
+  width: 20%;
+}
+#jsvigo > aside #lightning {
+  background: #87B0DC;
+  padding: 15px;
+}
+#jsvigo > aside #lightning .lightning-logo {
+  display: none;
+}
+#jsvigo > aside #timer .countdown {
+  color: #fff;
+}
