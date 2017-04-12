@@ -62,11 +62,18 @@
 #pythonvigo > aside {
   position: absolute;
   right: 0;
-  top: 60px;
+  top: 80px;
   padding: 15px;
   font-size: 20px;
   width: 20%;
 }
+#pythonvigo > aside #lightning {
+  padding: 20px;
+}
 #pythonvigo > aside #lightning .lightning-logo {
   display: none;
+}
+#pythonvigo > aside #timer .countdown {
+  padding: 20px;
+  background: #fff;
 }

@@ -18,86 +18,69 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0.txt GNU LGPL 3.0
  *
  */
-
-
-@primary-color:  #80B2DE;
-@white-color: #fff;
-@black-color: #000;
-
-@primary-font: Arial, Helvetica, 'Open Sans';
-
-
-
-#pythonvigo {
+#vigolabs {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   font-size: 25px;
-
-  background: @primary-color;
-  font-family: @primary-font;
-  color: @white-color;
-
-  > header,
-  > footer {
-    background: @white-color;
-    padding: 20px 40px;
-    color: @black-color;
-    position: absolute;
-    left: 0;
-    right: 0;
-    font-size: 28px;
-
-    h1 {
-      margin: 0;
-      font-family: @primary-font;
-    }
-
-
-  }
-  > footer {
-    bottom: 0;
-  }
-
-  > header {
-    top: 0;
-
-    #logo {
-      position: absolute;
-      background: url(../i/logo.png) no-repeat right center;
-      background-size: contain;
-      right:20px;
-      top:10px;
-      width: 200px;
-      height: 40px;
-    }
-  }
-
-  > aside {
-    position: absolute;
-    right: 0;
-    top: 80px;
-    padding: 15px;
-    font-size: 20px;
-    width: 20%;
-
-
-    #lightning {
-      padding: 20px;
-      .lightning-logo {
-        display: none
-      }
-    }
-
-    #timer {
-      .countdown {
-        padding: 20px;
-        background: @white-color;
-      }
-    }
-  }
+  background: #00c2e8 url(../i/logo.jpg);
+  font-family: 'Raleway', Helvetica, 'Open Sans';
+  font-weight: 400;
+  color: #fff;
 }
-
-
+#vigolabs > header,
+#vigolabs > footer {
+  background: #384452;
+  padding: 20px 40px;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 28px;
+}
+#vigolabs > header h1,
+#vigolabs > footer h1 {
+  margin: 0;
+  font-family: 'Raleway', Helvetica, 'Open Sans';
+}
+#vigolabs > footer {
+  bottom: 0;
+}
+#vigolabs > footer .talk {
+  font-weight: 800;
+}
+#vigolabs > header {
+  top: 0;
+}
+#vigolabs > header #logo {
+  display: none;
+  /*
+      position: absolute;
+      background: url(../i/logo.jpg) no-repeat;
+      background-size: contain;
+      right:0;
+      top:0;
+      width: 60px;
+      height: 70px;
+      */
+}
+#vigolabs > aside {
+  position: absolute;
+  right: 0;
+  top: 130px;
+  padding: 15px;
+  font-size: 20px;
+  width: 20%;
+}
+#vigolabs > aside #lightning {
+  background: rgba(56, 68, 82, 0.4);
+  padding: 15px;
+}
+#vigolabs > aside #lightning .lightning-logo {
+  display: none;
+}
+#vigolabs > aside #timer .countdown {
+  color: #fff;
+}

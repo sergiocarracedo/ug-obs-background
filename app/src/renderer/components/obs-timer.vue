@@ -45,6 +45,10 @@
             },
             update() {
                 this.seconds--;
+                if (this.seconds < 0) {
+                    this.seconds = 0;
+                    this.pause();
+                }
             },
             pause() {
                 clearInterval(this.interval);
@@ -59,7 +63,6 @@
 
 <style scoped>
     .countdown {
-        background: #fff;
         text-align: center;
         color: #000;
         padding: 5px 10px;

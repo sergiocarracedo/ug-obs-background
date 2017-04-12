@@ -18,61 +18,66 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0.txt GNU LGPL 3.0
  *
  */
-#phpvigo {
+#agilevigo {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  background: url(../i/bg.jpg) no-repeat;
+  background-size: cover;
   font-size: 25px;
-  background: #0368FF url(../i/dot.png) 10px 10px;
-  font-family: Dosis;
+  font-family: 'Source Sans Pro', Helvetica, 'Open Sans';
   color: #fff;
 }
-#phpvigo > header,
-#phpvigo > footer {
-  background: #fff;
+#agilevigo > header,
+#agilevigo > footer {
+  background: #c20017;
   padding: 20px 40px;
-  color: #0368FF;
+  color: #fff;
   position: absolute;
   left: 0;
   right: 0;
   font-size: 28px;
 }
-#phpvigo > header h1,
-#phpvigo > footer h1 {
+#agilevigo > header h1,
+#agilevigo > footer h1 {
   margin: 0;
-  font-family: Dosis;
+  font-family: 'Source Sans Pro', Helvetica, 'Open Sans';
 }
-#phpvigo > footer {
+#agilevigo > footer {
   bottom: 0;
 }
-#phpvigo > header {
+#agilevigo > footer .talk {
+  font-weight: 800;
+}
+#agilevigo > header {
   top: 0;
 }
-#phpvigo > header #logo {
+#agilevigo > header #logo {
   position: absolute;
-  background: url(../i/logo.png) no-repeat right center;
+  background: url(../i/logo.jpg) no-repeat center center;
   background-size: contain;
-  right: 20px;
+  right: 0;
   top: 10px;
-  width: 200px;
-  height: 40px;
+  width: 20%;
+  height: 100px;
 }
-#phpvigo > aside {
+#agilevigo > aside {
   position: absolute;
   right: 0;
-  top: 60px;
+  top: 130px;
   padding: 15px;
   font-size: 20px;
   width: 20%;
 }
-#phpvigo > aside #lightning .lightning-logo {
-  height: 100px;
-  margin-bottom: 30px;
-  background: url(../i/logo-lightnings.png) no-repeat center center;
-  background-size: contain;
+#agilevigo > aside #lightning {
+  background: #c20017;
+  padding: 15px;
 }
-#phpvigo > aside #timer .countdown {
-  background: #fff;
+#agilevigo > aside #lightning .lightning-logo {
+  display: none;
+}
+#agilevigo > aside #timer .countdown {
+  color: #fff;
 }

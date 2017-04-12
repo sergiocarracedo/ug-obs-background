@@ -20,15 +20,15 @@
  */
 
 
-@primary-color:  #80B2DE;
+@primary-color:  #63a8d9;
 @white-color: #fff;
 @black-color: #000;
 
-@primary-font: Arial, Helvetica, 'Open Sans';
+@primary-font: Lato , Helvetica, 'Open Sans';
 
 
 
-#pythonvigo {
+#vigojug {
   position: absolute;
   left: 0;
   right: 0;
@@ -36,15 +36,15 @@
   bottom: 0;
   font-size: 25px;
 
-  background: @primary-color;
+  background: #eeeeee url(../i/bg.jpg);
   font-family: @primary-font;
   color: @white-color;
 
   > header,
   > footer {
-    background: @white-color;
+    background: @primary-color;
     padding: 20px 40px;
-    color: @black-color;
+    color: @white-color;
     position: absolute;
     left: 0;
     right: 0;
@@ -66,36 +66,34 @@
 
     #logo {
       position: absolute;
-      background: url(../i/logo.png) no-repeat right center;
+      background: url(../i/logo.jpg) no-repeat center center;
       background-size: contain;
-      right:20px;
+      right:0;
       top:10px;
-      width: 200px;
-      height: 40px;
+      width: 20%;
+      height: 100px;
     }
   }
 
   > aside {
     position: absolute;
     right: 0;
-    top: 80px;
+    top: 130px;
     padding: 15px;
     font-size: 20px;
     width: 20%;
 
 
     #lightning {
-      padding: 20px;
+      background: @primary-color;
+      padding: 15px;
       .lightning-logo {
         display: none
       }
     }
 
-    #timer {
-      .countdown {
-        padding: 20px;
-        background: @white-color;
-      }
+    #timer .countdown {
+      color: #fff;
     }
   }
 }

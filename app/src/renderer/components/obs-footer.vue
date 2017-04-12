@@ -1,6 +1,6 @@
 <template>
     <footer>
-        {{ speaker }} - {{ title }}
+        <span class="talk">{{ speaker }}</span> - <span class="speaker">{{ title }}</span>
     </footer>
 </template>
 
