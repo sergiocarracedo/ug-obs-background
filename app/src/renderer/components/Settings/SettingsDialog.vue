@@ -143,7 +143,6 @@
                 this.$store.commit(types.REMOVE_TALK, talk)
             },
             updateTalk(talk) {
-                console.log(talk);
                 this.$store.commit(types.UPDATE_TALK, talk)
             },
             setCurrentTalk(index) {
