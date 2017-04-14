@@ -77,3 +77,21 @@
 #jsvigo > aside #timer .countdown {
   color: #fff;
 }
+#jsvigo #obs-clock {
+  color: #87B0DC;
+  margin-bottom: 50px;
+}
+#jsvigo #obs-clock .date,
+#jsvigo #obs-clock .time {
+  display: block;
+  text-align: center;
+}
+#jsvigo #obs-clock .date {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+#jsvigo #obs-clock .time {
+  font-weight: bold;
+  font-size: 30px;
+}

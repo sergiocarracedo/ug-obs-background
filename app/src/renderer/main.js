@@ -47,6 +47,7 @@ Vue.component('obs-footer', require('./components/obs-footer.vue'));
 Vue.component('obs-aside', require('./components/obs-aside.vue'));
 Vue.component('obs-lightning', require('./components/obs-lightning.vue'));
 Vue.component('obs-timer', require('./components/obs-timer.vue'));
+Vue.component('obs-clock', require('./components/obs-clock.vue'));
 
 
 import App from './App'

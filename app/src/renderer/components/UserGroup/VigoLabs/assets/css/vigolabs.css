@@ -84,3 +84,23 @@
 #vigolabs > aside #timer .countdown {
   color: #fff;
 }
+#vigolabs > aside #obs-clock {
+  color: #fff;
+  margin-bottom: 50px;
+  background: rgba(56, 68, 82, 0.4);
+  padding: 15px 20px;
+}
+#vigolabs > aside #obs-clock .date,
+#vigolabs > aside #obs-clock .time {
+  display: block;
+  text-align: center;
+}
+#vigolabs > aside #obs-clock .date {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+#vigolabs > aside #obs-clock .time {
+  font-weight: bold;
+  font-size: 30px;
+}

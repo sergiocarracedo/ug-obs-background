@@ -48,6 +48,10 @@
                         <label>Título meetup</label>
                         <md-input v-model="settings.meetup.title"></md-input>
                     </md-input-container>
+
+                    <md-layout>
+                        <md-switch v-model="settings.showClock">Show clock</md-switch>
+                    </md-layout>
                 </md-tab>
 
             </md-tabs>
@@ -71,8 +75,8 @@
                 settings: {
                     ug: null,
                     meetup: {},
+                    showClock: false,
                 },
-
             }
         },
         computed: {
@@ -110,6 +114,7 @@
         created() {
             this.settings.ug = this.$store.state.settings.ug;
             this.settings.meetup = this.$store.state.settings.meetup;
+            this.settings.showClock = this.$store.state.settings.showClock;
         },
         methods: {
             open()
@@ -130,6 +135,7 @@
             {
                 this.$store.commit(types.SET_UG, this.settings.ug);
                 this.$store.commit(types.SET_MEETUP, this.settings.meetup);
+                this.$store.commit(types.SET_SHOW_CLOCK, this.settings.showClock);
                 this.$store.dispatch(types.ACTION_SAVE_SETTINGS);
             },
             addTalk() {

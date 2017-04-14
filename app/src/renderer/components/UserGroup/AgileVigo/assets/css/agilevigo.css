@@ -24,7 +24,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  background: url(../i/bg.jpg) no-repeat;
+  background: url(../i/bgAgile.jpg) no-repeat;
   background-size: cover;
   font-size: 25px;
   font-family: 'Source Sans Pro', Helvetica, 'Open Sans';
@@ -80,4 +80,17 @@
 }
 #agilevigo > aside #timer .countdown {
   color: #fff;
+}
+#agilevigo > aside #obs-clock {
+  text-color: #c20017;
+  text-align: center;
+  background: #c20017;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+}
+#agilevigo > aside #obs-clock .date {
+  font-size: 14px;
+}
+#agilevigo > aside #obs-clock .time {
+  font-size: 30px;
 }

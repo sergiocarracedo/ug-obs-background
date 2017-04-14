@@ -77,3 +77,21 @@
 #vigojug > aside #timer .countdown {
   color: #fff;
 }
+#vigojug > aside #obs-clock {
+  color: #63a8d9;
+  margin-bottom: 50px;
+}
+#vigojug > aside #obs-clock .date,
+#vigojug > aside #obs-clock .time {
+  display: block;
+  text-align: center;
+}
+#vigojug > aside #obs-clock .date {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+#vigojug > aside #obs-clock .time {
+  font-weight: bold;
+  font-size: 30px;
+}

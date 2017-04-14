@@ -75,4 +75,15 @@
 }
 #phpvigo > aside #timer .countdown {
   background: #fff;
+  font-size: 40px;
+}
+#phpvigo > aside #obs-clock {
+  text-align: right;
+  margin-bottom: 50px;
+}
+#phpvigo > aside #obs-clock .date {
+  font-size: 14px;
+}
+#phpvigo > aside #obs-clock .time {
+  font-size: 30px;
 }

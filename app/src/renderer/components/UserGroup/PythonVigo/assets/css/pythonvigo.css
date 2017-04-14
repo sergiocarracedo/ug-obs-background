@@ -77,3 +77,21 @@
   padding: 20px;
   background: #fff;
 }
+#pythonvigo > aside #obs-clock {
+  color: #000;
+  margin-bottom: 50px;
+}
+#pythonvigo > aside #obs-clock .date,
+#pythonvigo > aside #obs-clock .time {
+  display: block;
+  text-align: center;
+}
+#pythonvigo > aside #obs-clock .date {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+#pythonvigo > aside #obs-clock .time {
+  font-weight: bold;
+  font-size: 30px;
+}
