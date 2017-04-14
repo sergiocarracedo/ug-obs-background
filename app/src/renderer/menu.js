@@ -5,10 +5,10 @@ import * as types from './vuex/mutation-types'
 
 var template = [
     {
-        label: 'Configuración',
+        label: 'Settings',
         submenu: [
             {
-                label: 'Configuración',
+                label: 'Settings',
                 accelerator: 'CmdOrCtrl+S',
                 click: function () {
                     store.commit(types.OPEN_SETTINGS_DIALOG);
@@ -17,17 +17,17 @@ var template = [
         ],
     },
     {
-        label: 'Acciones',
+        label: 'Talks',
         submenu: [
             {
-                label: 'Siguente Charla',
+                label: 'Next talk',
                 accelerator: 'CmdOrCtrl+Right',
                 click: function () {
                     store.dispatch(types.NEXT_TALK);
                 }
             },
             {
-                label: 'Anterior Charla',
+                label: 'Previous talk',
                 accelerator: 'CmdOrCtrl+Left',
                 click: function () {
                     store.dispatch(types.PREV_TALK);
@@ -59,6 +59,18 @@ var template = [
             {label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:"},
             {label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:"}
         ]
+    },
+    {
+        label: 'About',
+        submenu: [
+            {
+                label: 'About',
+                accelerator: 'CmdOrCtrl+U',
+                click: function () {
+                    store.commit(types.OPEN_ABOUT_DIALOG);
+                }
+            }
+        ],
     }
 ];
 

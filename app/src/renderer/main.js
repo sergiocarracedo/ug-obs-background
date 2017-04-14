@@ -41,6 +41,7 @@ for (var ugComponent in ugComponents) {
 }
 
 Vue.component('settings-dialog', require('./components/Settings/SettingsDialog.vue'));
+Vue.component('about-dialog', require('./components/About/AboutDialog.vue'));
 Vue.component('obs-header', require('./components/obs-header.vue'));
 Vue.component('obs-footer', require('./components/obs-footer.vue'));
 Vue.component('obs-aside', require('./components/obs-aside.vue'));

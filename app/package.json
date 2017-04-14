@@ -1,6 +1,6 @@
 {
   "name": "obsbackground",
-  "version": "0.5.0",
+  "version": "0.5.3",
   "description": "OBS Background",
   "main": "./dist/main.js",
   "dependencies": {

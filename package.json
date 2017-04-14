@@ -1,6 +1,6 @@
 {
   "name": "obsbackground",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "OBS Background",
   "scripts": {
     "build": "node tasks/release.js",

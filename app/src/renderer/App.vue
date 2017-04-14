@@ -1,6 +1,7 @@
 <template>
     <div id="app-wrapper">
         <settings-dialog :ugList="ugList"></settings-dialog>
+        <about-dialog></about-dialog>
         <component
                 v-bind:is="ug"
         ></component>
