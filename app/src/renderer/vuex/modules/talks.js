@@ -2,8 +2,15 @@ import * as types from '../mutation-types'
 const settings = require('electron-settings');
 
 
+const default_talks = [{
+    title: 'Charla',
+    speaker: 'Ponente',
+    isLightning: false,
+}];
+
+
 const state = {
-    talks: settings.get('talks', new Array()),
+    talks: settings.get('talks', default_talks),
     currentTalk: {},
     currentTalkIndex: settings.get('currentTalkIndex', 0)
 }
@@ -31,11 +38,14 @@ const mutations = {
 }
 
 
-const actions  ={
+const actions = {
     [types.ACTION_SET_CURRENT_TALK] (context, index) {
         if (index == undefined) {
             index = context.state.currentTalkIndex;
         }
+
+        console.log(context.state);
+
         context.commit(types.SET_CURRENT_TALK_INDEX, index);
         context.commit(types.SET_CURRENT_TALK, context.state.talks[index]);
     },
@@ -65,7 +75,7 @@ const actions  ={
 }
 
 const getters = {
-    talksLenght : state => {
+    talksLenght: state => {
         return state.talks.length
     }
 }

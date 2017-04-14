@@ -22,6 +22,15 @@ npm run build
 npm run pack
 
 ```
+
+
+## Keyboard Shortcuts
+
+```CtrlOrCmd + S``` Open setings dialog
+```CtrlOrCmd + Left``` Prev talk
+```CtrlOrCmd + Right``` Next talk
+
+
 ## Create new user group component
 It's easy, simpy create a new vue component in renderer/UserGroup/[yourUG]/yourUG.vue and rebuild app, it will be imported automatically.
 

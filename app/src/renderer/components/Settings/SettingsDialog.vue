@@ -28,7 +28,7 @@
                             </md-layout>
 
                             <md-layout md-flex="10">
-                                <md-button class="md-icon-button md-raised md-dense md-accent" @click.native="removeTalk(talk)">
+                                <md-button class="md-icon-button md-raised md-dense md-accent" @click.native="removeTalk(talk)" v-show="talksLenght > 1">
                                     <i class="fa fa-trash"></i>
                                 </md-button>
                             </md-layout>
@@ -90,6 +90,9 @@
 
 
                 }
+            },
+            talksLenght() {
+                return this.$store.getters.talksLenght;
             }
         },
         watch: {
