@@ -1,6 +1,9 @@
 import * as types from '../mutation-types'
 const settings = require('electron-settings');
 
+
+console.log(settings.file());
+
 const state = {
     ug: settings.get('ug', 'phpvigo'),
     ugs: [],

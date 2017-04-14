@@ -15,6 +15,7 @@ function createWindows() {
     mainWindow = new BrowserWindow({
         height: 600,
         width: 800,
+        title: "Ug OBS Background",
         icon: 'file://' + __dirname + '/../../icons/256x256.png',
     })
 
@@ -39,6 +40,6 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
     if (mainWindow === null) {
-        createWindow()
+        createWindows()
     }
 })

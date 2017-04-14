@@ -1,6 +1,6 @@
 {
   "name": "obsbackground",
-  "version": "0.0.0",
+  "version": "0.5.0",
   "description": "OBS Background",
   "scripts": {
     "build": "node tasks/release.js",
@@ -16,7 +16,7 @@
     "postinstall": "cd app && npm install"
   },
   "author": "Greg Holguin <simulatedgreg@gmail.com>",
-  "license": "MIT",
+  "license": "GPLv3",
   "devDependencies": {
     "babel-core": "^6.8.0",
     "babel-loader": "^6.2.4",

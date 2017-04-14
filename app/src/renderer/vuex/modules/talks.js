@@ -33,7 +33,6 @@ const mutations = {
 
 const actions  ={
     [types.ACTION_SET_CURRENT_TALK] (context, index) {
-        console.log(index);
         if (index == undefined) {
             index = context.state.currentTalkIndex;
         }
