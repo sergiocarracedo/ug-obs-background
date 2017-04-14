@@ -38,6 +38,35 @@ const actions  ={
         }
         context.commit(types.SET_CURRENT_TALK_INDEX, index);
         context.commit(types.SET_CURRENT_TALK, context.state.talks[index]);
+    },
+    [types.NEXT_TALK] (context, index) {
+        if (index == undefined) {
+            index = context.state.currentTalkIndex;
+        }
+        index++;
+        if (index > (context.getters.talksLenght - 1)) {
+            index = 0;
+        }
+        context.commit(types.SET_CURRENT_TALK_INDEX, index);
+        context.commit(types.SET_CURRENT_TALK, context.state.talks[index]);
+    },
+    [types.PREV_TALK] (context, index) {
+        if (index == undefined) {
+            index = context.state.currentTalkIndex;
+        }
+        index--;
+        if (index < 0) {
+            index = context.getters.talksLenght - 1;
+        }
+        context.commit(types.SET_CURRENT_TALK_INDEX, index);
+        context.commit(types.SET_CURRENT_TALK, context.state.talks[index]);
+    },
+
+}
+
+const getters = {
+    talksLenght : state => {
+        return state.talks.length
     }
 }
 
@@ -46,4 +75,5 @@ export default {
     state,
     mutations,
     actions,
+    getters
 }
