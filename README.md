@@ -50,7 +50,7 @@ Make sure you import Usergrpup.js into your component and use as mixin.
 
 ----
 
-More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/docs/npm_scripts.html).
+More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/en/npm_scripts.html).
 
 ---
 
