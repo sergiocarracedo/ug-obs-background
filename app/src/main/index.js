@@ -1,6 +1,8 @@
 'use strict'
-import {app, BrowserWindow} from 'electron'
+import {app, BrowserWindow, Tray, Menu, ipcMain} from 'electron'
 let mainWindow
+let tray = null;
+import * as types from '../renderer/vuex/mutation-types'
 
 
 
@@ -16,7 +18,7 @@ function createWindows() {
         height: 600,
         width: 800,
         title: "Ug OBS Background",
-        icon: 'file://' + __dirname + '/../../icons/256x256.png',
+        icon: __dirname + '/../../icons/256x256.png',
     })
 
     mainWindow.loadURL(mainWinURL)
@@ -32,6 +34,44 @@ function createWindows() {
 
 app.on('ready', () => {
     createWindows();
+
+    tray = new Tray(__dirname + '/../../icons/256x256.png');
+    const contextMenu = Menu.buildFromTemplate([
+        {
+            label: 'Next talk',
+            accelerator: 'CmdOrCtrl+Right',
+            click: function () {
+                mainWindow.webContents.send('systemtray', {
+                    action: 'dispatch',
+                    event: types.NEXT_TALK
+                })
+
+            }
+        },
+        {
+            label: 'Previous talk',
+            accelerator: 'CmdOrCtrl+Left',
+            click: function () {
+                mainWindow.webContents.send('systemtray', {
+                    action: 'dispatch',
+                    event: types.PREV_TALK
+                })
+            }
+        },
+        {
+            label: 'Settings',
+            accelerator: 'CmdOrCtrl+S',
+            click: function () {
+                mainWindow.webContents.send('systemtray', {
+                    action: 'commit',
+                    event: types.OPEN_SETTINGS_DIALOG
+                })
+            }
+        }
+    ])
+    tray.setToolTip('UG OBS Background')
+    tray.setContextMenu(contextMenu)
+
 })
 
 app.on('window-all-closed', () => {

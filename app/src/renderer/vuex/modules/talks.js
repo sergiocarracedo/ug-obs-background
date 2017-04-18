@@ -44,8 +44,6 @@ const actions = {
             index = context.state.currentTalkIndex;
         }
 
-        console.log(context.state);
-
         context.commit(types.SET_CURRENT_TALK_INDEX, index);
         context.commit(types.SET_CURRENT_TALK, context.state.talks[index]);
     },

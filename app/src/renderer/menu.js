@@ -1,7 +1,8 @@
-const {Menu} = require('electron').remote;
+const { Menu } = require('electron').remote;
 import {ipcRenderer}  from 'electron'
 import store from './vuex/store'
 import * as types from './vuex/mutation-types'
+const path = require('path')
 
 var template = [
     {
@@ -76,3 +77,16 @@ var template = [
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
+
+
+ipcRenderer.on('systemtray' , function(event , data){
+    switch (data.action) {
+        case 'dispatch':
+            store.dispatch(data.event);
+            break;
+        case 'commit' :
+            store.commit(data.event);
+            break;
+    }
+
+});
