@@ -9,6 +9,7 @@ const state = {
     },
     dialog: false,
     showClock: settings.get('showClock', false),
+    lightningDuration: settings.get('lightningDuration', '5:00')
 }
 
 const mutations = {
@@ -26,6 +27,9 @@ const mutations = {
     },
     [types.CLOSE_SETTINGS_DIALOG] (state) {
         state.dialog = false;
+    },
+    [types.SET_LIGHTNING_DURATION] (state, duration) {
+        state.lightningDuration = duration;
     }
 
 }
@@ -37,6 +41,7 @@ const actions = {
         settings.set('showClock', context.state.showClock);
         settings.set('talks', context.rootState.talks.talks);
         settings.set('currentTalkIndex', context.rootState.talks.currentTalkIndex);
+        settings.set('lightningDuration', context.state.lightningDuration);
     }
 }
 

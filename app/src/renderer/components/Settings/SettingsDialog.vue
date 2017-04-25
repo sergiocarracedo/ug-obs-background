@@ -52,6 +52,11 @@
                     <md-layout>
                         <md-switch v-model="settings.showClock">Show clock</md-switch>
                     </md-layout>
+
+                    <md-input-container>
+                        <label>Lightning talk duration (MM:SS)</label>
+                        <md-input v-model="settings.lightningDuration"></md-input>
+                    </md-input-container>
                 </md-tab>
 
             </md-tabs>
@@ -76,6 +81,7 @@
                     ug: null,
                     meetup: {},
                     showClock: false,
+                    lightningDuration: 300,
                 },
             }
         },
@@ -91,7 +97,6 @@
                     return this.$store.state.talks.talks;
                 },
                 set: function (newValue) {
-
 
                 }
             },
@@ -115,6 +120,7 @@
             this.settings.ug = this.$store.state.settings.ug;
             this.settings.meetup = this.$store.state.settings.meetup;
             this.settings.showClock = this.$store.state.settings.showClock;
+            this.settings.lightningDuration = this.$store.state.settings.lightningDuration;
         },
         methods: {
             open()
@@ -136,6 +142,7 @@
                 this.$store.commit(types.SET_UG, this.settings.ug);
                 this.$store.commit(types.SET_MEETUP, this.settings.meetup);
                 this.$store.commit(types.SET_SHOW_CLOCK, this.settings.showClock);
+                this.$store.commit(types.SET_LIGHTNING_DURATION, this.settings.lightningDuration);
                 this.$store.dispatch(types.ACTION_SAVE_SETTINGS);
             },
             addTalk() {
