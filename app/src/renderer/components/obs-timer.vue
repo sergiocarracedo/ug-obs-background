@@ -4,16 +4,25 @@
             <i class="fa fa-clock-o"></i> {{ countdown }}
         </div>
         <div class="buttonset">
-            <md-button class="md-icon-button md-dense" @click.native="start()">
+            <md-button v-show="!interval" class="md-icon-button md-dense" @click.native="start()">
                 <i class="fa fa-play"></i>
             </md-button>
-            <md-button class="md-icon-button md-dense" @click.native="pause()">
+            <md-button v-show="interval" class="md-icon-button md-dense" @click.native="pause()">
                 <i class="fa fa-pause"></i>
             </md-button>
             <md-button class="md-icon-button md-dense" @click.native="reset()">
                 <i class="fa fa-refresh"></i>
             </md-button>
+
+            <md-button v-show="seconds == 0" class="md-icon-button md-dense" @click.native="extended()">
+                <i class="fa fa-expand"></i>
+            </md-button>
         </div>
+
+        <div v-if="isExtended" class="extended">
+            <i class="fa fa-plus"></i> {{ extendedTime }}
+        </div>
+
     </div>
 </template>
 
@@ -24,7 +33,10 @@
         data() {
             return {
                 seconds: 0,
-                interval: null
+                extendedSeconds: 0,
+                extendedInterval: null,
+                interval: null,
+                isExtended: false
             }
         },
         computed: {
@@ -32,12 +44,19 @@
                 let date = new Date(null);
                 date.setSeconds(this.seconds)
                 return date.toISOString().substr(14, 5);
+            },
+            extendedTime() {
+                let date = new Date(null);
+                date.setSeconds(this.extendedSeconds)
+                return date.toISOString().substr(14, 5);
             }
         },
         methods: {
             reset() {
                 this.pause();
-                 this.seconds = this.time;
+                this.seconds = this.time;
+                this.isExtended = false;
+                clearInterval(this.intervalExtended);
 
             },
             start() {
@@ -52,7 +71,18 @@
             },
             pause() {
                 clearInterval(this.interval);
+                this.interval = null;
             },
+            startExtended() {
+                this.intervalExtended = setInterval(this.updateExtended, 1000);
+            },
+            updateExtended() {
+                this.extendSeconds++;
+            },
+            extended() {
+                this.isExtended = true;
+                this.startExtended();
+            }
         },
         mounted() {
             this.reset();
