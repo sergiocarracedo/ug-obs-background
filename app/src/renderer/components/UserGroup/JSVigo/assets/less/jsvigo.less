@@ -20,7 +20,7 @@
  */
 
 
-@primary-color:  #87B0DC;
+@primary-color:  #ffd428;
 @white-color: #fff;
 @black-color: #000;
 
@@ -36,13 +36,13 @@
 
   background: #eeeeee url(../i/bg.svg) no-repeat bottom ;
   font-family: @primary-font;
-  color: @white-color;
+  color: @black-color;
 
   > header,
   > footer {
     background: @primary-color;
     padding: 20px 40px;
-    color: @white-color;
+    color: @black-color;
     position: absolute;
     left: 0;
     right: 0;
@@ -90,14 +90,17 @@
       }
     }
 
-    #timer .countdown {
-      color: #fff;
+    #timer {
+      .extended,
+      .countdown {
+        color: @black-color;
+      }
     }
   }
 
 
   #obs-clock {
-    color: @primary-color;
+    color: @black-color;
     margin-bottom: 50px;
 
     .date,

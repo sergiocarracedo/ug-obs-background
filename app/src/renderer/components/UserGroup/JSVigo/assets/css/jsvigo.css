@@ -27,13 +27,13 @@
   font-size: 25px;
   background: #eeeeee url(../i/bg.svg) no-repeat bottom;
   font-family: 'Open Sans', Arial, Helvetica;
-  color: #fff;
+  color: #000;
 }
 #jsvigo > header,
 #jsvigo > footer {
-  background: #87B0DC;
+  background: #ffd428;
   padding: 20px 40px;
-  color: #fff;
+  color: #000;
   position: absolute;
   left: 0;
   right: 0;
@@ -68,17 +68,18 @@
   width: 20%;
 }
 #jsvigo > aside #lightning {
-  background: #87B0DC;
+  background: #ffd428;
   padding: 15px;
 }
 #jsvigo > aside #lightning .lightning-logo {
   display: none;
 }
+#jsvigo > aside #timer .extended,
 #jsvigo > aside #timer .countdown {
-  color: #fff;
+  color: #000;
 }
 #jsvigo #obs-clock {
-  color: #87B0DC;
+  color: #000;
   margin-bottom: 50px;
 }
 #jsvigo #obs-clock .date,
