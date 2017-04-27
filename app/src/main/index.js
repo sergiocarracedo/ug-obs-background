@@ -39,7 +39,6 @@ app.on('ready', () => {
     const contextMenu = Menu.buildFromTemplate([
         {
             label: 'Next talk',
-            accelerator: 'CmdOrCtrl+Right',
             click: function () {
                 mainWindow.webContents.send('systemtray', {
                     action: 'dispatch',
@@ -50,7 +49,6 @@ app.on('ready', () => {
         },
         {
             label: 'Previous talk',
-            accelerator: 'CmdOrCtrl+Left',
             click: function () {
                 mainWindow.webContents.send('systemtray', {
                     action: 'dispatch',
@@ -60,12 +58,18 @@ app.on('ready', () => {
         },
         {
             label: 'Settings',
-            accelerator: 'CmdOrCtrl+S',
             click: function () {
                 mainWindow.webContents.send('systemtray', {
                     action: 'commit',
                     event: types.OPEN_SETTINGS_DIALOG
                 })
+            }
+        },
+        {
+            label: 'Exit',
+            accelerator: 'CmdOrCtrl+S',
+            click: function () {
+                mainWindow.close();
             }
         }
     ])

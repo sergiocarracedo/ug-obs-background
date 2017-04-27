@@ -4,22 +4,26 @@
             <i class="fa fa-clock-o"></i> {{ countdown }}
         </div>
         <div class="buttonset">
-            <md-button v-show="!interval" class="md-icon-button md-dense" @click.native="start()">
+            <md-button v-show="!interval && seconds != 0" class="md-icon-button md-dense" @click.native="start()">
                 <i class="fa fa-play"></i>
             </md-button>
-            <md-button v-show="interval" class="md-icon-button md-dense" @click.native="pause()">
+            <md-button v-show="interval && seconds != 0" class="md-icon-button md-dense" @click.native="pause()">
                 <i class="fa fa-pause"></i>
             </md-button>
+
+            <md-button v-show="seconds == 0 && !isExtended" class="md-icon-button md-dense" @click.native="extended()">
+                <i class="fa fa-expand"></i>
+            </md-button>
+
             <md-button class="md-icon-button md-dense" @click.native="reset()">
                 <i class="fa fa-refresh"></i>
             </md-button>
 
-            <md-button v-show="seconds == 0" class="md-icon-button md-dense" @click.native="extended()">
-                <i class="fa fa-expand"></i>
-            </md-button>
+
         </div>
 
         <div v-if="isExtended" class="extended">
+            <p>Extended time</p>
             <i class="fa fa-plus"></i> {{ extendedTime }}
         </div>
 
@@ -34,7 +38,7 @@
             return {
                 seconds: 0,
                 extendedSeconds: 0,
-                extendedInterval: null,
+                intervalExtended: null,
                 interval: null,
                 isExtended: false
             }
@@ -55,6 +59,7 @@
             reset() {
                 this.pause();
                 this.seconds = this.time;
+                this.extendedSeconds = 0;
                 this.isExtended = false;
                 clearInterval(this.intervalExtended);
 
@@ -77,7 +82,7 @@
                 this.intervalExtended = setInterval(this.updateExtended, 1000);
             },
             updateExtended() {
-                this.extendSeconds++;
+                this.extendedSeconds++;
             },
             extended() {
                 this.isExtended = true;
@@ -100,5 +105,17 @@
     }
     .buttonset {
         text-align: center;
+    }
+
+    .extended {
+        text-align: center;
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 28px;
+
+    }
+    .extended p {
+        font-size: 15px;
+        margin-bottom: 10px;
     }
 </style>

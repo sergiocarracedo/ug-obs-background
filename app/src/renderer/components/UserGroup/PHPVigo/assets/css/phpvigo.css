@@ -77,6 +77,12 @@
   background: #fff;
   font-size: 40px;
 }
+#phpvigo > aside #timer .extended {
+  font-size: 35px;
+}
+#phpvigo > aside #timer .extended p {
+  font-size: 20px;
+}
 #phpvigo > aside #obs-clock {
   text-align: right;
   margin-bottom: 50px;
