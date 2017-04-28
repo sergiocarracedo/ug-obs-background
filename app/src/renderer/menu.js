@@ -47,6 +47,20 @@ var template = [
                         focusedWindow.reload();
                 }
             },
+            {
+                label: 'Force window size',
+                accelerator: 'CmdOrCtrl+F',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        let size = store.state.settings.windowSize;
+                        let dimensions = size.split('x');
+
+                        if (dimensions[0] > 0 && dimensions[1] > 0) {
+                            focusedWindow.setContentSize(Number(dimensions[0]), Number(dimensions[1]), true);
+                        }
+                    }
+                }
+            },
         ]
     },
     {

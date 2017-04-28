@@ -9,7 +9,8 @@ const state = {
     },
     dialog: false,
     showClock: settings.get('showClock', false),
-    lightningDuration: settings.get('lightningDuration', '5:00')
+    lightningDuration: settings.get('lightningDuration', '5:00'),
+    windowSize: settings.get('windowSize', '1024x768')
 }
 
 const mutations = {
@@ -30,6 +31,9 @@ const mutations = {
     },
     [types.SET_LIGHTNING_DURATION] (state, duration) {
         state.lightningDuration = duration;
+    },
+    [types.SET_WINDOW_SIZE] (state, size) {
+        state.windowSize = size;
     }
 
 }
@@ -42,6 +46,7 @@ const actions = {
         settings.set('talks', context.rootState.talks.talks);
         settings.set('currentTalkIndex', context.rootState.talks.currentTalkIndex);
         settings.set('lightningDuration', context.state.lightningDuration);
+        settings.set('windowSize', context.state.windowSize);
     }
 }
 

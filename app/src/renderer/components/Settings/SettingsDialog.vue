@@ -57,6 +57,12 @@
                         <label>Lightning talk duration (MM:SS)</label>
                         <md-input v-model="settings.lightningDuration"></md-input>
                     </md-input-container>
+
+                    <md-input-container>
+                        <label>Window size</label>
+                        <md-input v-model="settings.windowSize" ></md-input>
+                        <span>ex. 1024x768</span>
+                    </md-input-container>
                 </md-tab>
 
             </md-tabs>
@@ -117,10 +123,7 @@
             }
         },
         created() {
-            this.settings.ug = this.$store.state.settings.ug;
-            this.settings.meetup = this.$store.state.settings.meetup;
-            this.settings.showClock = this.$store.state.settings.showClock;
-            this.settings.lightningDuration = this.$store.state.settings.lightningDuration;
+            this.settings = this.$store.state.settings
         },
         methods: {
             open()

@@ -15,3 +15,4 @@ export const NEXT_TALK = 'NEXT_TALK';
 export const PREV_TALK = 'PREV_TALK';
 export const SET_SHOW_CLOCK = 'SET_SHOW_CLOCK';
 export const SET_LIGHTNING_DURATION = 'SET_LIGHTNING_DURATION';
+export const SET_WINDOW_SIZE = 'SET_WINDOW_SIZE';
