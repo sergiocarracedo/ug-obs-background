@@ -7,8 +7,10 @@ const pkg = require('./app/package.json')
 const settings = require('./config.js')
 const webpack = require('webpack')
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 
 let rendererConfig = {
   devtool: '#eval-source-map',
@@ -21,10 +23,10 @@ let rendererConfig = {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.html$/,
@@ -48,12 +50,6 @@ let rendererConfig = {
         test: /\.vue$/,
         use: {
           loader: 'vue-loader',
-          options: {
-            loaders: {
-              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
-              scss: 'vue-style-loader!css-loader!sass-loader'
-            }
-          }
         }
       },
       {
@@ -79,7 +75,7 @@ let rendererConfig = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('styles.css'),
+    new MiniCssExtractPlugin('styles.css'),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './app/index.ejs',
@@ -87,7 +83,8 @@ let rendererConfig = {
         ? path.resolve(__dirname, 'app/node_modules')
         : false,
     }),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new VueLoaderPlugin()
   ],
   output: {
     filename: '[name].js',

@@ -7,7 +7,7 @@
                         <i class="fa fa-plus"></i>
                     </md-button>
                     <div class="talks-list">
-                        <md-layout v-for="(talk, index) in talks">
+                        <md-layout v-for="(talk, index) in talks" :key="index">
                             <md-layout md-flex="5">
                                 <md-radio v-model="currentTalk" name="currentTalk" :md-value="index" @change="setCurrentTalk"></md-radio>
                             </md-layout>
@@ -40,7 +40,7 @@
                     <md-input-container>
                         <label for="selectedUg">Grupo</label>
                         <md-select name="selectedUg" id="selectedUg" v-model="settings.ug">
-                            <md-option v-for="ug in ugList" :value="ug">{{ ug }}</md-option>
+                            <md-option v-for="(ug, key) in ugList" :key="key" :value="ug">{{ ug }}</md-option>
                         </md-select>
                     </md-input-container>
 

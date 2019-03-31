@@ -34,20 +34,20 @@ import menu from './menu';
 //Read UserGroup folder and get all components
 import ugComponents from './components/UserGroup';
 
-var ugList = [];
-for (var ugComponent in ugComponents) {
+const ugList = [];
+for (let ugComponent in ugComponents) {
     Vue.component(ugComponents[ugComponent].name, ugComponents[ugComponent]);
     ugList.push(ugComponents[ugComponent].name);
 }
 
-Vue.component('settings-dialog', require('./components/Settings/SettingsDialog.vue'));
-Vue.component('about-dialog', require('./components/About/AboutDialog.vue'));
-Vue.component('obs-header', require('./components/obs-header.vue'));
-Vue.component('obs-footer', require('./components/obs-footer.vue'));
-Vue.component('obs-aside', require('./components/obs-aside.vue'));
-Vue.component('obs-lightning', require('./components/obs-lightning.vue'));
-Vue.component('obs-timer', require('./components/obs-timer.vue'));
-Vue.component('obs-clock', require('./components/obs-clock.vue'));
+Vue.component('settings-dialog', require('./components/Settings/SettingsDialog.vue').default);
+Vue.component('about-dialog', require('./components/About/AboutDialog.vue').default);
+Vue.component('obs-header', require('./components/obs-header.vue').default);
+Vue.component('obs-footer', require('./components/obs-footer.vue').default);
+Vue.component('obs-aside', require('./components/obs-aside.vue').default);
+Vue.component('obs-lightning', require('./components/obs-lightning.vue').default);
+Vue.component('obs-timer', require('./components/obs-timer.vue').default);
+Vue.component('obs-clock', require('./components/obs-clock.vue').default);
 
 
 import App from './App'
