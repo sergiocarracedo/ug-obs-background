@@ -7,7 +7,7 @@
     "babel-runtime": "^6.23.0",
     "electron-settings": "^3.0.14",
     "font-awesome": "^4.7.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "vue-material": "^0.7.1",
     "vue": "^2.1.10",
     "vue-electron": "^1.0.6",
